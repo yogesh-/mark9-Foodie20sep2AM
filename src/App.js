@@ -9,7 +9,7 @@ var emojis = {
 };
 
 export default function App() {
-  var [meaning, setuserMeaning] = useState("");
+  var [meaning, setuserMeaning] = useState("Mumbai");
 
   // make an array of object keys
 
@@ -18,8 +18,8 @@ export default function App() {
   //ClickHandler function
 
   function clickHandler(emoji) {
-    var meaning = emojis[emoji];
-    setuserMeaning(meaning);
+    //var meaning = emojis[emoji];
+    setuserMeaning(emoji);
   }
   //
 
@@ -48,7 +48,7 @@ export default function App() {
 
       <hr></hr>
       <div>
-        {meaning.map(function (dish) {
+        {emojis[meaning].map(function (dish) {
           return <li>{dish}</li>;
         })}
       </div>
